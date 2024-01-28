@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+  <path
+    d="M39.9 78.5001C60.9972 78.5001 78.0999 61.3974 78.0999 40.3001C78.0999 19.2028 60.9972 2.1001 39.9 2.1001C18.8027 2.1001 1.69995 19.2028 1.69995 40.3001C1.69995 61.3974 18.8027 78.5001 39.9 78.5001Z"
+    stroke="#C7E5C3" stroke-width="3" stroke-miterlimit="10" />
+  <path d="M20.2 59.2001L58.2 21.1001" stroke="#C7E5C3" stroke-width="3" stroke-miterlimit="10" />
+  <path d="M20.2 21.1001L58.2 59.2001" stroke="#C7E5C3" stroke-width="3" stroke-miterlimit="10" />
+</svg>
