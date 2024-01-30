@@ -56,9 +56,9 @@ const MobileHeader = () => {
           <img src={three_lines} id="three_lines" alt="three_lines" className="h-9 w-9" />
         </button>
       </header>
-      <section id="side_bar" className={`${isSidebarOpen ? 'fixed w-full h-full' : 'hidden'} bg-[#019F6C] z-10`}>
-        <nav className="flex-col absolute top-[10%] left-[15%]">
-          <ul className="space-y-14 text-3xl text-[#B9E2B6]">
+      <section id="side_bar" className={`${isSidebarOpen ? 'fixed w-dvw h-dvh' : 'hidden'} bg-[#019F6C] z-10`}>
+        <nav className="mt-10 px-10">
+          <ul className="space-y-14 text-xl text-[#B9E2B6]">
             <li>HISTORIA</li>
             <li>QUIENES SOMOS</li>
             <li>GALERÍA</li>
@@ -72,7 +72,7 @@ const MobileHeader = () => {
             </li>
           </ul>
         </nav>
-        <section className="text-white absolute bottom-32 px-5 w-full text-2xl">
+        <section className="text-white px-5 mt-12 w-full text-2xl">
           <h3>
             &quot;QUE NADIE VENGA A TI,
           </h3>
