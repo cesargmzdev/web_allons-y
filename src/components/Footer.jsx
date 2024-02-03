@@ -6,7 +6,7 @@ const Year = new Date().getFullYear();
 const Footer = () => {
   return (
     <footer>
-      <section className='flex justify-between px-5'>
+      <section className='flex justify-between px-5 lg:px-10'>
         <img src={Whatsapp} alt="Whatsapp icon" className='w-9' />
         <img src={Instragram} alt="Instagram icon" className='w-9' />
         <img src={Linkedin} alt="Linkedin icon" className='w-9' />

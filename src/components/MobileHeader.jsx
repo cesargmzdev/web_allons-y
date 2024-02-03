@@ -5,6 +5,7 @@ import three_lines from "../assets/svg/3-lines.svg";
 import logo_sidebar from "../assets/svg/logo-opened-sidebar.svg";
 import hide_button from "../assets/svg/hide-button.svg";
 import heart from "../assets/svg/heart.svg";
+import {Link} from 'react-router-dom';
 
 const MobileHeader = () => {
   const headerRef = useRef(null);
@@ -50,8 +51,12 @@ const MobileHeader = () => {
   return (
     <>
       <header ref={headerRef} className="bg-white sticky top-0 flex justify-between items-center p-5 opacity-100 transition-opacity duration-75">
-        <img src={logo} id="logo" alt="logo" className="h-10" />
-        <img src={logo2} id="logo2" alt="logo2" className="h-7" />
+        <Link to={'/'}>
+          <img src={logo} id="logo" alt="logo" className="h-10" />
+        </Link>
+        <Link to={'/'}>
+          <img src={logo2} id="logo2" alt="logo2" className="h-7" />
+        </Link>
         <button type="button" onClick={sideBar}>
           <img src={three_lines} id="three_lines" alt="three_lines" className="h-9 w-9" />
         </button>
@@ -59,17 +64,29 @@ const MobileHeader = () => {
       <section id="side_bar" className={`${isSidebarOpen ? 'fixed w-dvw h-dvh' : 'hidden'} bg-[#019F6C] z-10`}>
         <nav className="mt-10 px-10">
           <ul className="space-y-14 text-xl text-[#B9E2B6]">
-            <li>HISTORIA</li>
-            <li>QUIENES SOMOS</li>
-            <li>GALERÍA</li>
-            <li>CALENDARIO Y ACTIVIDADES</li>
-            <li>CONTACTO</li>
-            <li>
-              <div className="flex items-center gap-6">
-                APÚNTATE
-                <img src={heart} alt="heart" className="h-8" />
-              </div>
-            </li>
+            <Link>
+              <li>HISTORIA</li>
+            </Link>
+            <Link>
+              <li>QUIENES SOMOS</li>
+            </Link>
+            <Link>
+              <li>GALERÍA</li>
+            </Link>
+            <Link to={'/calendar'}>
+              <li>CALENDARIO Y ACTIVIDADES</li>
+            </Link>
+            <Link>
+              <li>CONTACTO</li>
+            </Link>
+            <Link>
+              <li>
+                <div className="flex items-center gap-6">
+                  APÚNTATE
+                  <img src={heart} alt="heart" className="h-8" />
+                </div>
+              </li>
+            </Link>
           </ul>
         </nav>
         <section className="text-white px-5 mt-12 w-full text-2xl">
