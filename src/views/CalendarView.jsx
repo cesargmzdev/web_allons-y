@@ -11,7 +11,7 @@ const selectHeader = () => {
   }
 };
 
-const Calendar = () => {
+const CalendarView = () => {
   return (
     <>
       {selectHeader()}
@@ -21,4 +21,4 @@ const Calendar = () => {
   );
 };
 
-export default Calendar;
+export default CalendarView;

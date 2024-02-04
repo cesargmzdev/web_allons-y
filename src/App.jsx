@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./views/Home";
-import Calendar from "./views/Calendar&Activities";
+import CalendarView from "./views/CalendarView";
 
 const App = () => {
 
@@ -8,7 +8,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/calendar" element={<CalendarView />} />
       </Routes>
     </BrowserRouter>
   );

@@ -6,3 +6,16 @@
 body {
   font-family: 'Acme', sans-serif;
 }
+
+.rbc-event {
+  background-color: #019F6C !important;
+}
+
+.rbc-event.rbc-selected{
+  background-color: #019F6C !important;
+}
+
+.rbc-agenda-empty{
+  text-align: center;
+  padding-top: 5rem;
+}
