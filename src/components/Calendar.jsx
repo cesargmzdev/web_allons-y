@@ -1,14 +1,27 @@
 import PropTypes from 'prop-types';
+import {useEffect, useState} from 'react';
 import {Calendar, dayjsLocalizer} from 'react-big-calendar';
 import dayjs from 'dayjs';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'dayjs/locale/es';
-
-const events = [
-  
-];
+// import portPromise from '../../server/server.mjs';
 
 const MyCalendar = () => {
+  const [events, setEvents] = useState([]);
+  // console.log(portPromise);
+  useEffect(() => {
+    fetch(`http://localhost:3000/events`)
+      .then(response => response.json())
+      .then(data => {
+        setEvents(data.map(event => ({
+          ...event,
+          start: new Date(event.start),
+          end: new Date(event.end),
+        })));
+      })
+      .catch(error => console.error('Error:', error));
+  }, []);
+
   dayjs.locale('es');
   const localizer = dayjsLocalizer(dayjs);
 
@@ -50,7 +63,5 @@ const MyCalendar = () => {
 MyCalendar.propTypes = {
   events: PropTypes.array.isRequired,
 };
-
-
 
 export default MyCalendar;
