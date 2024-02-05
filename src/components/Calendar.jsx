@@ -4,11 +4,10 @@ import {Calendar, dayjsLocalizer} from 'react-big-calendar';
 import dayjs from 'dayjs';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'dayjs/locale/es';
-// import portPromise from '../../server/server.mjs';
+// import {port} from '../../server/server.mjs';
 
 const MyCalendar = () => {
   const [events, setEvents] = useState([]);
-  // console.log(portPromise);
   useEffect(() => {
     fetch(`http://localhost:3000/events`)
       .then(response => response.json())
