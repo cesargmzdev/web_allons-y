@@ -24,34 +24,48 @@ const Event = mongoose.model('Event', EventSchema, 'Events');
 
 app.get('/events', async (req, res) => {
   Event.find()
-  .then(events => {
-    if (events) {
-      res.json(events);
-    } else {
+    .then(events => {
+      if (events) {
+        res.json(events);
+      } else {
+        res.json([]);
+      }
+    })
+    .catch(err => {
+      console.error(err);
       res.json([]);
-    }
-  })
-  .catch(err => {
-    console.error(err);
-    res.json([]);
-  });
+    });
 });
 
 app.use(express.static(__dirname));
 
 app.get('/manage_events', (req, res) => {
-    res.sendFile(path.join(__dirname, 'manage_events.html'));
+  res.sendFile(path.join(__dirname, 'manage_events.html'));
 });
 
-app.post('/manage_events', async (req, res) => {
-  console.log(req.body); // Add this line
+app.post('/new_event', async (req, res) => {
   const event = new Event(req.body);
   await event.save();
+  console.log('Evento creado', event);
   res.json(event);
 });
 
+app.delete('/manage_events/:id', async (req, res) => {
+  const {id} = req.params;
+  await Event.findByIdAndDelete(id);
+  res.json({message: 'Evento eliminado', id});
+  console.log('Evento eliminado', id);
+});
+
+app.put('/manage_events/:id', async (req, res) => {
+  const {id} = req.params;
+  await Event.findByIdAndUpdate(id, req.body);
+  res.json(res.body);
+  console.log('Evento actualizado', id);
+});
+
 app.listen(3000, () => {
-    console.log('Server is running on port http://localhost:3000');
+  console.log('Server is running on port http://localhost:3000');
 });
 
 // const event = new Event({
