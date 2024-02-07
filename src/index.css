@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  scrollbar-color: #b9e2b6 #019F6C;
+  scrollbar-width: thin;
+}
+
 body {
   font-family: 'Acme', sans-serif;
 }

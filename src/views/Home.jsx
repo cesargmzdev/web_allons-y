@@ -1,4 +1,3 @@
-import MobileHeader from "../components/MobileHeader";
 import imagenGrupo2 from "../assets/Imgs/Fotos presentación home/imagenGrupo2.jpg";
 import imagen2 from "../assets/Imgs/Fotos presentación home/imagen2.jpg";
 import imagenGrupo from "../assets/Imgs/Fotos presentación home/imagenGrupo.jpg";
@@ -11,15 +10,8 @@ import mercadillo2 from "../assets/Imgs/Voluntariados/Mercadillo Solidario/merca
 import formacion2 from "../assets/Imgs/Formación/formacion2.jpg";
 import adventure from "../assets/Imgs/Voluntariados/aventura.jpg";
 import Footer from "../components/Footer";
-import DesktopHeader from "../components/DesktopHeader";
+import selectHeader from "../features/SelectHeader";
 
-const selectHeader = () => {
-  if (window.innerWidth < 1024) {
-    return <MobileHeader />;
-  } else {
-    return <DesktopHeader />;
-  }
-};
 
 const Home = () => {
   return (

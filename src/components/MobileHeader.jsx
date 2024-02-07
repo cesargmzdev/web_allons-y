@@ -18,9 +18,9 @@ const MobileHeader = () => {
 
     if (window.scrollY > 0) {
       headerRef.current.classList.remove('opacity-100');
-      headerRef.current.classList.add('opacity-60');
+      headerRef.current.classList.add('opacity-80');
     } else {
-      headerRef.current.classList.remove('opacity-60');
+      headerRef.current.classList.remove('opacity-80');
       headerRef.current.classList.add('opacity-100');
     }
   }, [isSidebarOpen]);
@@ -31,7 +31,7 @@ const MobileHeader = () => {
     header.classList.toggle('bg-[#019F6C]');
     header.classList.toggle('bg-white');
     if (window.scrollY !== 0) {
-      header.classList.toggle('opacity-60');
+      header.classList.toggle('opacity-80');
     }
     const logo1_element = document.querySelector('#logo');
     const logo2_element = document.querySelector('#logo2');

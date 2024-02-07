@@ -22,7 +22,7 @@ const EventSchema = new mongoose.Schema({
 
 const Event = mongoose.model('Event', EventSchema, 'Events');
 
-app.get('/events', async (req, res) => {
+app.get('/events', async (_req, res) => {
   Event.find()
     .then(events => {
       if (events) {
@@ -39,7 +39,7 @@ app.get('/events', async (req, res) => {
 
 app.use(express.static(__dirname));
 
-app.get('/manage_events', (req, res) => {
+app.get('/manage_events', (_req, res) => {
   res.sendFile(path.join(__dirname, 'manage_events.html'));
 });
 

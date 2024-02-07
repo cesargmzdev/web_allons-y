@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 const DesktopHeader = () => {
   return (
-    <header className="flex sticky top-0 bg-white z-10 border-b-2 items-center p-5">
+    <header className="flex sticky top-0 bg-white z-10 drop-shadow-md items-center p-5">
       <Link to={'/'}>
         <section className="flex items-center gap-4 xl:gap-14 2xl:gap-20">
           <img src={logo} alt="logo" className="w-14" />
