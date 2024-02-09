@@ -22,13 +22,13 @@ document.getElementById('event-form').addEventListener('submit', () => {
 const deleteEvent = (id) => {
   fetch(`/manage_events/${id}`, {
     method: 'DELETE',
-  })
-    .then(response => response.json())
-    .then(data => console.log(data));
-  alert('Evento eliminado')
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+  });
+  //   .then(response => response.json())
+  //   .then(data => console.log(data));
+  // alert('Evento eliminado')
+  //   .catch((error) => {
+  //     console.error('Error:', error);
+  //   });
 };
 
 const updateEvent = (id, title, start, end) => {
@@ -96,3 +96,17 @@ fetch('/events')
   .catch((error) => {
     console.error('Error:', error);
   });
+
+document.getElementById('log_out').addEventListener('click', () => {
+  fetch('/logout', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.message);
+      window.location.href = `http://localhost:3000${data.redirect}`;
+    });
+});
