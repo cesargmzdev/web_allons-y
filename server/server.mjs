@@ -29,7 +29,7 @@ const EventSchema = new mongoose.Schema({
   end: Date
 });
 
-const Event = mongoose.model('Event', EventSchema, 'Events');
+const Event = mongoose.model('Event', EventSchema);
 
 const authMiddleware = (req, res, next) => {
   const token = req.cookies.jwt;
