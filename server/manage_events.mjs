@@ -75,16 +75,24 @@ fetch('/events')
         eventForm.appendChild(eventInfo);
 
         // Create delete button
+        const div_buttons = document.createElement('div');
+        div_buttons.style.display = 'flex';
+        div_buttons.style.justifyContent = 'center';
+        div_buttons.style.gap = '1rem';
+
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Eliminar evento';
         deleteButton.onclick = () => deleteEvent(event._id);
-        eventForm.appendChild(deleteButton);
 
         // Create update button
         const updateButton = document.createElement('button');
-        updateButton.textContent = 'Modificar y actualizar evento';
+        updateButton.textContent = 'Actualizar evento';
         updateButton.onclick = () => updateEvent(event._id, eventTitle.value, eventStart.value, eventEnd.value);
-        eventForm.appendChild(updateButton);
+
+        div_buttons.appendChild(deleteButton);
+        div_buttons.appendChild(updateButton);
+
+        eventForm.appendChild(div_buttons);
 
         // Add event div to events
         events.appendChild(eventForm);

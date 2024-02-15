@@ -6,7 +6,9 @@ const CalendarView = () => {
   return (
     <>
       {selectHeader()}
-      <MyCalendar />
+      <main>
+        <MyCalendar />
+      </main>
       <Footer />
     </>
   );
