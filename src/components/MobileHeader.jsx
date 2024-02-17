@@ -70,7 +70,7 @@ const MobileHeader = () => {
             <Link to={'/team'}>
               <li>QUIENES SOMOS</li>
             </Link>
-            <Link>
+            <Link to={'/gallery'}>
               <li>GALERÍA</li>
             </Link>
             <Link to={'/calendar'}>

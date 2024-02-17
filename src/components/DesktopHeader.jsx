@@ -20,7 +20,7 @@ const DesktopHeader = () => {
           <Link to={'/team'}>
             <li className="hover:font-extrabold hover:scale-105 hover:duration-100">QUIENES SOMOS</li>
           </Link>
-          <Link>
+          <Link to={'/gallery'}>
             <li className="hover:font-extrabold hover:scale-105 hover:duration-100">GALERÍA</li>
           </Link>
           <Link to={'/calendar'}>

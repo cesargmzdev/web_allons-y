@@ -2,6 +2,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./views/Home";
 import CalendarView from "./views/CalendarView";
 import Team from "./views/Team";
+import Gallery from "./views/Gallery";
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/calendar" element={<CalendarView />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </BrowserRouter>
   );
