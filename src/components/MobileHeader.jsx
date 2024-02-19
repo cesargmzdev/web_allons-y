@@ -50,7 +50,7 @@ const MobileHeader = () => {
 
   return (
     <>
-      <header ref={headerRef} className="bg-white sticky top-0 flex justify-between items-center p-5 opacity-100 transition-opacity duration-75">
+      <header ref={headerRef} className="bg-white sticky top-0 z-10 flex justify-between items-center p-5 opacity-100 transition-opacity duration-75 drop-shadow-md">
         <Link to={'/'}>
           <img src={logo} id="logo" alt="logo" className="h-10" />
         </Link>
@@ -61,9 +61,9 @@ const MobileHeader = () => {
           <img src={three_lines} id="three_lines" alt="three_lines" className="h-9 w-9" />
         </button>
       </header>
-      <section id="side_bar" className={`${isSidebarOpen ? 'fixed w-dvw h-dvh' : 'hidden'} bg-[#019F6C] z-10`}>
-        <nav className="mt-10 px-10">
-          <ul className="space-y-14 text-xl text-[#B9E2B6]">
+      <section id="side_bar" className={`${isSidebarOpen ? 'fixed w-dvw h-dvh' : 'hidden'} bg-[#019F6C] z-20`}>
+        <nav className='mt-10'>
+          <ul className="flex flex-col items-center gap-16 text-xl text-[#B9E2B6]">
             <Link>
               <li>HISTORIA</li>
             </Link>
@@ -81,15 +81,15 @@ const MobileHeader = () => {
             </Link>
             <Link>
               <li>
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-3">
                   APÚNTATE
-                  <img src={heart} alt="heart" className="h-8" />
+                  <img src={heart} alt="heart" className="h-4" />
                 </div>
               </li>
             </Link>
           </ul>
         </nav>
-        <section className="text-white px-5 mt-12 w-full text-2xl">
+        <section className="text-white px-5 mt-28 w-full text-2xl">
           <h3>
             &quot;QUE NADIE VENGA A TI,
           </h3>

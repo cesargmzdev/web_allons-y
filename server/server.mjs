@@ -31,6 +31,12 @@ const EventSchema = new mongoose.Schema({
 
 const Event = mongoose.model('Event', EventSchema);
 
+const TestimonySchema = new mongoose.Schema({
+  text: String
+});
+
+const Testimony = mongoose.model('Testimony', TestimonySchema);
+
 const authMiddleware = (req, res, next) => {
   const token = req.cookies.jwt;
 
@@ -123,6 +129,28 @@ app.put('/manage_events/:id', async (req, res) => {
   await Event.findByIdAndUpdate(id, req.body);
   res.json(res.body);
   console.log('Evento actualizado', id);
+});
+
+app.post('/testimonies', async (req, res) => {
+  const testimony = new Testimony(req.body);
+  await testimony.save();
+  res.json(testimony);
+  console.log('Testimonio creado', testimony);
+});
+
+app.get('/testimonies', async (_req, res) => {
+  Testimony.find()
+    .then(testimonies => {
+      if (testimonies) {
+        res.json(testimonies);
+      } else {
+        res.json([]);
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.json([]);
+    });
 });
 
 app.listen(3000, () => {
