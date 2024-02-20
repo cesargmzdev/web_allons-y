@@ -8,12 +8,13 @@ const Testimonies = () => {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        setTestimonies(data);
+        setTestimonies(data.reverse());
       });
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const form = e.target;
     const testimonyText = document.getElementById('TestimonyText').value;
     fetch('http://localhost:3000/testimonies', {
       method: 'POST',
@@ -26,7 +27,8 @@ const Testimonies = () => {
       .then(data => {
         console.log(data);
         alert('Testimonio enviado');
-        setTestimonies(prevTestimonies => [...prevTestimonies, data]);
+        setTestimonies(prevTestimonies => [data, ...prevTestimonies]);
+        form.reset();
       });
   };
 

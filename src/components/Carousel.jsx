@@ -12,7 +12,7 @@ import CasaST7 from '../assets/Imgs/Voluntariados/Casa Santa Teresa/7.jpg';
 
 export const CarouselComponent = () => {
   return (
-    <Carousel slideInterval={5000} showControls={true} indicators={true} className="h-[50dvh] sm:h-[50dvh] md:h-[50dvh] xl:h-[50dvh] 2xl:h-[50dvh] sm:mx-[20%] sm:rounded-2xl m-5 bg-[#47d693]">
+    <Carousel slideInterval={5000} showControls={true} indicators={true} className="h-[70dvh] sm:h-[70dvh] md:h-[70dvh] xl:h-[70dvh] 2xl:h-[70dvh] sm:mx-[20%] sm:rounded-2xl m-5 bg-[#47d693]">
       <img src={voluntariado1} alt="voluntariado" className="object-contain" />
       <img src={voluntariado2} alt="voluntariado" className="object-contain" />
       <img src={CasaST1} alt="CasaST" className="object-contain" />
