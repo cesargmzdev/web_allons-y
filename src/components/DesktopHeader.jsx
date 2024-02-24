@@ -14,22 +14,22 @@ const DesktopHeader = () => {
       </Link>
       <nav className="flex-grow">
         <ul className="flex justify-end items-center flex-nowrap gap-4 text-nowrap text-[#3F936D] xl:gap-14 2xl:gap-20">
-          <Link>
+          <Link to={'/history'}>
             <li className="hover:font-extrabold hover:scale-105 hover:duration-100">HISTORIA</li>
           </Link>
           <Link to={'/team'}>
             <li className="hover:font-extrabold hover:scale-105 hover:duration-100">QUIENES SOMOS</li>
           </Link>
           <Link to={'/gallery'}>
-            <li className="hover:font-extrabold hover:scale-105 hover:duration-100">GALERÍA</li>
+            <li className="hover:font-extrabold hover:scale-105 hover:duration-100">GALERÍA Y TESTIMONIOS</li>
           </Link>
           <Link to={'/calendar'}>
             <li className="hover:font-extrabold hover:scale-105 hover:duration-100">CALENDARIO Y ACTIVIDADES</li>
           </Link>
-          <Link>
+          <Link to={'/contact'}>
             <li className="hover:font-extrabold hover:scale-105 hover:duration-100">CONTACTO</li>
           </Link>
-          <Link>
+          <Link to={'/join'}>
             <li className="hover:font-extrabold hover:animate-bounce hover:duration-100">
               <button type="button" className="bg-[#3F936D] rounded-xl text-white flex items-center py-1 px-4 gap-2">APÚNTATE
                 <img src={heart} alt="heart" className="w-5 h-5" />

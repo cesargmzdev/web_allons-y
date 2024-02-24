@@ -37,6 +37,16 @@ const TestimonySchema = new mongoose.Schema({
 
 const Testimony = mongoose.model('Testimony', TestimonySchema);
 
+const VolunteerSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  phone: String,
+  volunteering: String,
+  comment: String
+});
+
+const Volunteer = mongoose.model('Volunteer', VolunteerSchema);
+
 const authMiddleware = (req, res, next) => {
   const token = req.cookies.jwt;
 
@@ -66,7 +76,7 @@ app.post('/login', async (req, res) => {
     const token = jwt.sign({username}, SECRET);
 
     res.cookie('jwt', token);
-    res.json({redirect: '/manage_events'});
+    res.json({redirect: '/admin'});
   }
 });
 
@@ -91,8 +101,8 @@ app.post('/logout', (_req, res) => {
   res.json({message: 'Logged out', redirect: '/auth'});
 });
 
-app.get('/manage_events', authMiddleware, (_req, res) => {
-  res.sendFile(path.join(__dirname, 'manage_events.html'));
+app.get('/admin', authMiddleware, (_req, res) => {
+  res.sendFile(path.join(__dirname, 'admin.html'));
 });
 
 app.get('/events', async (_req, res) => {
@@ -117,14 +127,14 @@ app.post('/new_event', async (req, res) => {
   res.json(event);
 });
 
-app.delete('/manage_events/:id', async (req, res) => {
+app.delete('/admin/:id', async (req, res) => {
   const {id} = req.params;
   await Event.findByIdAndDelete(id);
   res.json({message: 'Evento eliminado', id});
   console.log('Evento eliminado', id);
 });
 
-app.put('/manage_events/:id', async (req, res) => {
+app.put('/admin/:id', async (req, res) => {
   const {id} = req.params;
   await Event.findByIdAndUpdate(id, req.body);
   res.json(res.body);
@@ -151,6 +161,42 @@ app.get('/testimonies', async (_req, res) => {
       console.error(err);
       res.json([]);
     });
+});
+
+app.delete('/admin/testimonies/:id', async (req, res) => {
+  const {id} = req.params;
+  await Testimony.findByIdAndDelete(id);
+  res.json({message: 'Testimonio eliminado', id});
+  console.log('Testimonio eliminado', id);
+});
+
+app.post('/volunteers', async (req, res) => {
+  const volunteer = new Volunteer(req.body);
+  await volunteer.save();
+  res.json(volunteer);
+  console.log('Voluntario creado', volunteer);
+});
+
+app.get('/volunteers', async (_req, res) => {
+  Volunteer.find()
+    .then(volunteers => {
+      if (volunteers) {
+        res.json(volunteers);
+      } else {
+        res.json([]);
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.json([]);
+    });
+});
+
+app.delete('/admin/volunteers/:id', async (req, res) => {
+  const {id} = req.params;
+  await Volunteer.findByIdAndDelete(id);
+  res.json({message: 'Voluntario eliminado', id});
+  console.log('Voluntario eliminado', id);
 });
 
 app.listen(3000, () => {

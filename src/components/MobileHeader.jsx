@@ -64,22 +64,22 @@ const MobileHeader = () => {
       <section id="side_bar" className={`${isSidebarOpen ? 'fixed w-dvw h-dvh' : 'hidden'} bg-[#019F6C] z-20`}>
         <nav className='mt-10'>
           <ul className="flex flex-col items-center gap-16 text-xl text-[#B9E2B6]">
-            <Link>
+            <Link to={'/history'}>
               <li>HISTORIA</li>
             </Link>
             <Link to={'/team'}>
               <li>QUIENES SOMOS</li>
             </Link>
             <Link to={'/gallery'}>
-              <li>GALERÍA</li>
+              <li>GALERÍA Y TESTIMONIOS</li>
             </Link>
             <Link to={'/calendar'}>
               <li>CALENDARIO Y ACTIVIDADES</li>
             </Link>
-            <Link>
+            <Link to={'/contact'}>
               <li>CONTACTO</li>
             </Link>
-            <Link>
+            <Link to={'/join'}>
               <li>
                 <div className="flex items-center gap-3">
                   APÚNTATE

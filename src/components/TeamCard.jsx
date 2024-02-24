@@ -9,7 +9,7 @@ const TeamCard = (props) => {
 
   return (
     <article className="p-5 flex flex-col gap-5 justify-center items-center">
-      <h2 className="text-[#019F6C] text-lg">{props.title}</h2>
+      <h2 className="text-[#019F6C] text-lg lg:text-2xl">{props.title}</h2>
       {imageElements}
     </article>
   );

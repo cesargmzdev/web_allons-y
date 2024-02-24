@@ -20,6 +20,15 @@
     #submit{
       margin-top: 1rem;
     }
+    h1{
+      margin-bottom: 3rem;
+    }
+    textarea{
+      width: 25%;
+      height: 10rem;
+      resize: none;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -29,19 +38,25 @@
   </div>
   <h1>Insertar evento</h1>
   <form id="event-form">
-    <label for="title">Title:</label>
+    <label for="title">Título del evento:</label>
     <input type="text" id="title" name="title" required>
-    <label for="start">Start:</label>
+    <label for="start">Inicio:</label>
     <input type="datetime-local" id="start" name="start" required>
-    <label for="end">End:</label>
+    <label for="end">Fin:</label>
     <input type="datetime-local" id="end" name="end" required>
     <br>
-    <button type="submit" id="submit">Add Event</button>
+    <button type="submit" id="submit">Añadir</button>
   </form>
-  <div id="message"></div>
   <div style='margin-top: 5rem;' id="events">
-  <h1>Eventos</h1>
+    <h1>Eventos</h1>
+  </div>
+  <div style='margin-top: 5rem;' id="testimonies">
+    <h1>Testimonios</h1>
+  </div>
+  <div style='margin-top: 5rem;' id="volunteers">
+    <h1>Voluntarios</h1>
+  </div>
 </div>
-<script type="module" src="./manage_events.mjs"></script>
+<script type="module" src="./admin.mjs"></script>
 </body>
 </html>
