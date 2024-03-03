@@ -6,7 +6,10 @@ import cookieParser from 'cookie-parser';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import {dirname} from 'path';
+import process from 'process';
+import dotenv from 'dotenv';
 // import net from 'net';
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -17,9 +20,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 app.use(express.static(__dirname));
 
-const ADMIN_USERNAME = 'admin'; // Reemplaza esto con el nombre de usuario del administrador
-const ADMIN_PASSWORD = 'password'; // Reemplaza esto con la contraseña del administrador
-const SECRET = 'your-secret-key';
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+const SECRET = process.env.SECRET;
 
 mongoose.connect('mongodb://localhost:27017/web_allons-y');
 
@@ -200,7 +203,7 @@ app.delete('/admin/volunteers/:id', async (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log('Server is running on port http://localhost:3000');
+  console.log('Server is running on port 3000, http://localhost:3000/admin');
 });
 
 // const event = new Event({
