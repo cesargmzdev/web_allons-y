@@ -1,4 +1,4 @@
-import {Carousel} from "keep-react";
+import { Carousel } from 'keep-react';
 import voluntariado1 from '../assets/Imgs/Voluntariados/voluntariado1.jpg';
 import voluntariado2 from '../assets/Imgs/Voluntariados/voluntariado2.webp';
 import CasaST1 from '../assets/Imgs/Voluntariados/Casa Santa Teresa/1.jpg';
@@ -9,10 +9,14 @@ import CasaST5 from '../assets/Imgs/Voluntariados/Casa Santa Teresa/5.jpg';
 import CasaST6 from '../assets/Imgs/Voluntariados/Casa Santa Teresa/6.jpg';
 import CasaST7 from '../assets/Imgs/Voluntariados/Casa Santa Teresa/7.jpg';
 
-
 export const CarouselComponent = () => {
   return (
-    <Carousel slideInterval={5000} showControls={true} indicators={true} className="h-[70dvh] sm:h-[70dvh] md:h-[70dvh] xl:h-[70dvh] 2xl:h-[70dvh] sm:mx-[20%] sm:rounded-2xl m-5 bg-[#47d693]">
+    <Carousel
+      slideInterval={5000}
+      showControls={true}
+      indicators={true}
+      className="m-5 h-[70dvh] bg-[#47d693] sm:mx-[20%] sm:h-[70dvh] sm:rounded-2xl md:h-[70dvh] xl:h-[70dvh] 2xl:h-[70dvh]"
+    >
       <img src={voluntariado1} alt="voluntariado" className="object-contain" />
       <img src={voluntariado2} alt="voluntariado" className="object-contain" />
       <img src={CasaST1} alt="CasaST" className="object-contain" />

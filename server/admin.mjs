@@ -7,51 +7,47 @@ document.getElementById('event-form').addEventListener('submit', () => {
   fetch('/new_event', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify({title, start, end}),
+    body: JSON.stringify({ title, start, end })
   })
-    .then(response => response.json())
-    .then(data => console.log(data));
-  alert('Evento creado')
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+  alert('Evento creado').catch((error) => {
+    console.error('Error:', error);
+  });
 });
 
 const deleteEvent = (id) => {
   fetch(`/admin/${id}`, {
-    method: 'DELETE',
-  })
-    .then(response => response.json());
-  alert('Evento eliminado')
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+    method: 'DELETE'
+  }).then((response) => response.json());
+  alert('Evento eliminado').catch((error) => {
+    console.error('Error:', error);
+  });
 };
 
 const updateEvent = (id, title, start, end) => {
   fetch(`/admin/${id}`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify({title, start, end}),
+    body: JSON.stringify({ title, start, end })
   })
-    .then(response => response.json())
-    .then(data => console.log(data));
-  alert('Evento actualizado')
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+  alert('Evento actualizado').catch((error) => {
+    console.error('Error:', error);
+  });
 };
 
 const events = document.getElementById('events');
 fetch('/events')
-  .then(response => response.json())
-  .then(data => {
+  .then((response) => response.json())
+  .then((data) => {
     if (Array.isArray(data) && data.length) {
-      data.reverse().forEach(event => {
+      data.reverse().forEach((event) => {
         // Create event div
         const eventDivider = document.createElement('hr');
         eventDivider.style.marginTop = '3rem';
@@ -91,7 +87,8 @@ fetch('/events')
         // Create update button
         const updateButton = document.createElement('button');
         updateButton.textContent = 'Actualizar evento';
-        updateButton.onclick = () => updateEvent(event._id, eventTitle.value, eventStart.value, eventEnd.value);
+        updateButton.onclick = () =>
+          updateEvent(event._id, eventTitle.value, eventStart.value, eventEnd.value);
 
         div_buttons.appendChild(deleteButton);
         div_buttons.appendChild(updateButton);
@@ -113,10 +110,10 @@ fetch('/events')
 
 const testimonies = document.getElementById('testimonies');
 fetch('/testimonies')
-  .then(response => response.json())
-  .then(data => {
+  .then((response) => response.json())
+  .then((data) => {
     if (Array.isArray(data) && data.length) {
-      data.reverse().forEach(testimony => {
+      data.reverse().forEach((testimony) => {
         // Create testimony div
         const testimonyForm = document.createElement('form');
         const testimonyDivider = document.createElement('hr');
@@ -139,9 +136,8 @@ fetch('/testimonies')
         deleteButton.textContent = 'Eliminar testimonio';
         deleteButton.onclick = () => {
           fetch(`/admin/testimonies/${testimony._id}`, {
-            method: 'DELETE',
-          })
-            .then(response => response.json());
+            method: 'DELETE'
+          }).then((response) => response.json());
           alert('Testimonio eliminado');
         };
 
@@ -163,10 +159,10 @@ fetch('/testimonies')
 
 const volunteers = document.getElementById('volunteers');
 fetch('/volunteers')
-  .then(response => response.json())
-  .then(data => {
+  .then((response) => response.json())
+  .then((data) => {
     if (Array.isArray(data) && data.length) {
-      data.reverse().forEach(volunteer => {
+      data.reverse().forEach((volunteer) => {
         // Create volunteer div
         const volunteerForm = document.createElement('form');
         const volunteerDivider = document.createElement('hr');
@@ -210,9 +206,8 @@ fetch('/volunteers')
         deleteButton.textContent = 'Eliminar voluntario';
         deleteButton.onclick = () => {
           fetch(`/admin/volunteers/${volunteer._id}`, {
-            method: 'DELETE',
-          })
-            .then(response => response.json());
+            method: 'DELETE'
+          }).then((response) => response.json());
           alert('Voluntario eliminado');
         };
 
@@ -236,11 +231,11 @@ document.getElementById('log_out').addEventListener('click', () => {
   fetch('/logout', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     }
   })
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       alert(data.message);
       window.location.href = `http://localhost:3000${data.redirect}`;
     });

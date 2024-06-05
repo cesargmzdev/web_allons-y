@@ -4,15 +4,17 @@ import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-import {fileURLToPath} from 'url';
-import {dirname} from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import process from 'process';
 import dotenv from 'dotenv';
+import morgan from 'morgan';
 // import net from 'net';
 dotenv.config();
 
 const app = express();
 app.use(cors());
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(cookieParser());
 app.disable('x-powered-by');
@@ -71,15 +73,15 @@ app.get('/auth', (_req, res) => {
 });
 
 app.post('/login', async (req, res) => {
-  const {username, password} = req.body;
+  const { username, password } = req.body;
 
   if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
-    return res.status(400).json({error: 'Invalid username or password'});
+    return res.status(400).json({ error: 'Invalid username or password' });
   } else {
-    const token = jwt.sign({username}, SECRET);
+    const token = jwt.sign({ username }, SECRET);
 
     res.cookie('jwt', token);
-    res.json({redirect: '/admin'});
+    res.json({ redirect: '/admin' });
   }
 });
 
@@ -87,7 +89,7 @@ app.get('/check_login', (req, res) => {
   const token = req.cookies.jwt;
 
   if (!token) {
-    return res.status(401).json({message: 'No token provided'});
+    return res.status(401).json({ message: 'No token provided' });
   }
 
   try {
@@ -95,13 +97,13 @@ app.get('/check_login', (req, res) => {
     res.json(decodedToken);
     console.log('Token verificado', decodedToken);
   } catch (err) {
-    res.status(401).json({message: 'Invalid token'});
+    res.status(401).json({ message: 'Invalid token' });
   }
 });
 
 app.post('/logout', (_req, res) => {
   res.clearCookie('jwt');
-  res.json({message: 'Logged out', redirect: '/auth'});
+  res.json({ message: 'Logged out', redirect: '/auth' });
 });
 
 app.get('/admin', authMiddleware, (_req, res) => {
@@ -110,14 +112,14 @@ app.get('/admin', authMiddleware, (_req, res) => {
 
 app.get('/events', async (_req, res) => {
   Event.find()
-    .then(events => {
+    .then((events) => {
       if (events) {
         res.json(events);
       } else {
         res.json([]);
       }
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
       res.json([]);
     });
@@ -131,14 +133,14 @@ app.post('/new_event', async (req, res) => {
 });
 
 app.delete('/admin/:id', async (req, res) => {
-  const {id} = req.params;
+  const { id } = req.params;
   await Event.findByIdAndDelete(id);
-  res.json({message: 'Evento eliminado', id});
+  res.json({ message: 'Evento eliminado', id });
   console.log('Evento eliminado', id);
 });
 
 app.put('/admin/:id', async (req, res) => {
-  const {id} = req.params;
+  const { id } = req.params;
   await Event.findByIdAndUpdate(id, req.body);
   res.json(res.body);
   console.log('Evento actualizado', id);
@@ -153,23 +155,23 @@ app.post('/testimonies', async (req, res) => {
 
 app.get('/testimonies', async (_req, res) => {
   Testimony.find()
-    .then(testimonies => {
+    .then((testimonies) => {
       if (testimonies) {
         res.json(testimonies);
       } else {
         res.json([]);
       }
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
       res.json([]);
     });
 });
 
 app.delete('/admin/testimonies/:id', async (req, res) => {
-  const {id} = req.params;
+  const { id } = req.params;
   await Testimony.findByIdAndDelete(id);
-  res.json({message: 'Testimonio eliminado', id});
+  res.json({ message: 'Testimonio eliminado', id });
   console.log('Testimonio eliminado', id);
 });
 
@@ -182,23 +184,23 @@ app.post('/volunteers', async (req, res) => {
 
 app.get('/volunteers', async (_req, res) => {
   Volunteer.find()
-    .then(volunteers => {
+    .then((volunteers) => {
       if (volunteers) {
         res.json(volunteers);
       } else {
         res.json([]);
       }
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
       res.json([]);
     });
 });
 
 app.delete('/admin/volunteers/:id', async (req, res) => {
-  const {id} = req.params;
+  const { id } = req.params;
   await Volunteer.findByIdAndDelete(id);
-  res.json({message: 'Voluntario eliminado', id});
+  res.json({ message: 'Voluntario eliminado', id });
   console.log('Voluntario eliminado', id);
 });
 
@@ -213,8 +215,6 @@ app.listen(3000, () => {
 // });
 
 // event.save();
-
-
 
 // const findAvailablePort = (desiredPort) => {
 //     return new Promise((resolve, reject) => {
@@ -235,7 +235,6 @@ app.listen(3000, () => {
 //         });
 //     });
 // };
-
 
 // const portPromise = findAvailablePort(3000).then(port => {
 //     app.listen(port, () => {

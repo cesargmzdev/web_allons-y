@@ -1,11 +1,11 @@
-import logo from "../assets/svg/logo.svg";
-import logo2 from "../assets/logos/Logo2-removebg 2.png";
-import heart from "../assets/svg/heart.svg";
-import {Link} from "react-router-dom";
+import logo from '../assets/svg/logo.svg';
+import logo2 from '../assets/logos/Logo2-removebg 2.png';
+import heart from '../assets/svg/heart.svg';
+import { Link } from 'react-router-dom';
 
 const DesktopHeader = () => {
   return (
-    <header className="flex sticky top-0 bg-white z-10 drop-shadow-md items-center p-5">
+    <header className="sticky top-0 z-10 flex items-center bg-white p-5 drop-shadow-md">
       <Link to={'/'}>
         <section className="flex items-center gap-4 xl:gap-14 2xl:gap-20">
           <img src={logo} alt="logo" className="w-14" />
@@ -13,26 +13,36 @@ const DesktopHeader = () => {
         </section>
       </Link>
       <nav className="flex-grow">
-        <ul className="flex justify-end items-center flex-nowrap gap-4 text-nowrap text-[#3F936D] xl:gap-14 2xl:gap-20">
+        <ul className="flex flex-nowrap items-center justify-end gap-4 text-nowrap text-[#3F936D] xl:gap-14 2xl:gap-20">
           <Link to={'/history'}>
-            <li className="hover:font-extrabold hover:scale-105 hover:duration-100">HISTORIA</li>
+            <li className="hover:scale-105 hover:font-extrabold hover:duration-100">HISTORIA</li>
           </Link>
           <Link to={'/team'}>
-            <li className="hover:font-extrabold hover:scale-105 hover:duration-100">QUIENES SOMOS</li>
+            <li className="hover:scale-105 hover:font-extrabold hover:duration-100">
+              QUIENES SOMOS
+            </li>
           </Link>
           <Link to={'/gallery'}>
-            <li className="hover:font-extrabold hover:scale-105 hover:duration-100">GALERÍA Y TESTIMONIOS</li>
+            <li className="hover:scale-105 hover:font-extrabold hover:duration-100">
+              GALERÍA Y TESTIMONIOS
+            </li>
           </Link>
           <Link to={'/calendar'}>
-            <li className="hover:font-extrabold hover:scale-105 hover:duration-100">CALENDARIO Y ACTIVIDADES</li>
+            <li className="hover:scale-105 hover:font-extrabold hover:duration-100">
+              CALENDARIO Y ACTIVIDADES
+            </li>
           </Link>
           <Link to={'/contact'}>
-            <li className="hover:font-extrabold hover:scale-105 hover:duration-100">CONTACTO</li>
+            <li className="hover:scale-105 hover:font-extrabold hover:duration-100">CONTACTO</li>
           </Link>
           <Link to={'/join'}>
-            <li className="hover:font-extrabold hover:animate-bounce hover:duration-100">
-              <button type="button" className="bg-[#3F936D] rounded-xl text-white flex items-center py-1 px-4 gap-2">APÚNTATE
-                <img src={heart} alt="heart" className="w-5 h-5" />
+            <li className="hover:animate-bounce hover:font-extrabold hover:duration-100">
+              <button
+                type="button"
+                className="flex items-center gap-2 rounded-xl bg-[#3F936D] px-4 py-1 text-white"
+              >
+                APÚNTATE
+                <img src={heart} alt="heart" className="h-5 w-5" />
               </button>
             </li>
           </Link>

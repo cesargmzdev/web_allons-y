@@ -1,14 +1,13 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Home from "./views/Home";
-import CalendarView from "./views/CalendarView";
-import Team from "./views/Team";
-import Gallery from "./views/Gallery";
-import History from "./views/History";
-import Contact from "./views/Contact";
-import Join from "./views/Join";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './views/Home';
+import CalendarView from './views/CalendarView';
+import Team from './views/Team';
+import Gallery from './views/Gallery';
+import History from './views/History';
+import Contact from './views/Contact';
+import Join from './views/Join';
 
 const App = () => {
-
   return (
     <BrowserRouter>
       <Routes>

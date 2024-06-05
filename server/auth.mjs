@@ -6,12 +6,12 @@ document.getElementById('auth_form').addEventListener('submit', (event) => {
   fetch('/login', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify({username, password}),
+    body: JSON.stringify({ username, password })
   })
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       if (data.error) {
         alert(data.error);
       } else if (data.redirect) {

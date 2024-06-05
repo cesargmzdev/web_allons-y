@@ -1,6 +1,6 @@
-import ContactSection from "../components/ContactSection";
-import Footer from "../components/Footer";
-import SelectHeader from "../features/SelectHeader";
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+import SelectHeader from '../features/SelectHeader';
 
 const Contact = () => {
   return (

@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
-@import "keep-react/css";
+@import 'keep-react/css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html{
-  scrollbar-color: #b9e2b6 #019F6C;
+html {
+  scrollbar-color: #b9e2b6 #019f6c;
   scrollbar-width: thin;
 }
 
@@ -14,14 +14,14 @@ body {
 }
 
 .rbc-event {
-  background-color: #019F6C !important;
+  background-color: #019f6c !important;
 }
 
-.rbc-event.rbc-selected{
-  background-color: #019F6C !important;
+.rbc-event.rbc-selected {
+  background-color: #019f6c !important;
 }
 
-.rbc-agenda-empty{
+.rbc-agenda-empty {
   text-align: center;
   padding-top: 5rem;
 }

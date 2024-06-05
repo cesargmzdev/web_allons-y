@@ -1,6 +1,6 @@
-import Footer from "../components/Footer";
-import JoinForm from "../components/JoinForm";
-import SelectHeader from "../features/SelectHeader";
+import Footer from '../components/Footer';
+import JoinForm from '../components/JoinForm';
+import SelectHeader from '../features/SelectHeader';
 
 const Join = () => {
   return (

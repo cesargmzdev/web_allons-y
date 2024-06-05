@@ -1,6 +1,6 @@
-import {useState, useEffect} from 'react';
-import MobileHeader from "../components/MobileHeader";
-import DesktopHeader from "../components/DesktopHeader";
+import { useState, useEffect } from 'react';
+import MobileHeader from '../components/MobileHeader';
+import DesktopHeader from '../components/DesktopHeader';
 
 const SelectHeader = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
