@@ -33,7 +33,7 @@ const JoinForm = () => {
         type="text"
         id="name"
         name="name"
-        className="border-2 border-[#49A87C] sm:mx-[20%]"
+        className="self-center border-2 border-[#49A87C] sm:mx-[20%] lg:w-1/4"
         required
       />
       <label htmlFor="email">Email:</label>
@@ -41,7 +41,7 @@ const JoinForm = () => {
         type="email"
         id="email"
         name="email"
-        className="border-2 border-[#49A87C] sm:mx-[20%]"
+        className="self-center border-2 border-[#49A87C] sm:mx-[20%] lg:w-1/4"
         required
       />
       <label htmlFor="phone">Teléfono:</label>
@@ -49,7 +49,7 @@ const JoinForm = () => {
         type="tel"
         id="phone"
         name="phone"
-        className="border-2 border-[#49A87C] sm:mx-[20%]"
+        className="self-center border-2 border-[#49A87C] sm:mx-[20%] lg:w-1/4"
         required
       />
       <label htmlFor="volunteering">Indica el voluntariado en el que te gustaría participar:</label>
@@ -57,14 +57,14 @@ const JoinForm = () => {
         type="text"
         name="volunteering"
         id="volunteering"
-        className="border-2 border-[#49A87C] sm:mx-[20%]"
+        className="self-center border-2 border-[#49A87C] sm:mx-[20%] lg:w-1/4"
         required
       />
       <label htmlFor="comment">Comentario:</label>
       <textarea
         id="comment"
         name="comment"
-        className="resize-none border-2 border-[#49A87C] sm:mx-[20%]"
+        className="resize-none self-center border-2 border-[#49A87C] sm:mx-[20%] lg:w-1/4"
         required
       />
       <input

@@ -11,9 +11,12 @@ const History = () => {
           <p className="text-pretty p-5 pb-10 sm:mx-[20%] lg:text-2xl">
             “Quiero ayudar pero no sé ni como ni donde”
             <br />
+            <br />
             “Me da miedo el compromiso”
             <br />
+            <br />
             “Quiero hacer voluntariado pero soy menor”
+            <br />
             <br />
             “Quiero formar parte de una familia”
           </p>

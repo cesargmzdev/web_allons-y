@@ -10,7 +10,7 @@ import process from 'process';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 // import net from 'net';
-dotenv.config();
+dotenv.config('.env.example');
 
 const app = express();
 app.use(cors());
