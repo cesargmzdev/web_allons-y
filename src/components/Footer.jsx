@@ -45,9 +45,7 @@ const Footer = () => {
         </a>
       </nav>
       <section className="flex-col pt-5 text-center text-sm">
-        <p>&copy; Allons-y. Todos los derechos reservados</p>
-        <p></p>
-        <p>{Year}</p>
+        <p>&copy; Allons-y {Year}</p>
       </section>
     </footer>
   );

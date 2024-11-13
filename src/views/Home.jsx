@@ -20,11 +20,19 @@ const Home = () => {
         <section className="bg-[#019F6C] px-5 text-xl text-white lg:h-[50dvh] lg:px-36 lg:py-8 lg:text-5xl xl:px-64 2xl:h-[58dvh] 2xl:px-[30%] 2xl:py-10">
           <h3>&quot;QUE NADIE VENGA A TI,</h3>
           <h3 className="text-right">SIN IRSE MEJOR Y MÁS FELIZ&quot;</h3>
-        </section>
-        <section className="lg:absolute lg:top-[25dvh] lg:flex lg:gap-6 lg:px-[6%] xl:px-64 2xl:px-[22%]">
-          <img src={imagen2} alt="imagen2" className="lg:w-[28dvw] 2xl:w-[18dvw]" />
-          <img src={imagenGrupo} alt="imagenGrupo" className="lg:w-[28dvw] 2xl:w-[18dvw]" />
-          <img src={imagenGrupo2} alt="imagenGrupo2" className="lg:w-[28dvw] 2xl:w-[18dvw]" />
+          <div className="md:flex md:justify-center md:gap-6 md:pt-8">
+            <img src={imagen2} alt="imagen2" className="rounded-2xl lg:w-[28dvw] 2xl:w-[18dvw]" />
+            <img
+              src={imagenGrupo}
+              alt="imagenGrupo"
+              className="rounded-2xl lg:w-[28dvw] 2xl:w-[18dvw]"
+            />
+            <img
+              src={imagenGrupo2}
+              alt="imagenGrupo2"
+              className="rounded-2xl lg:w-[28dvw] 2xl:w-[18dvw]"
+            />
+          </div>
         </section>
         <section className="my-10">
           <h2 className="p-4 text-center text-2xl text-[#49A87C] lg:pb-8 lg:pt-14 lg:text-5xl">
@@ -57,7 +65,11 @@ const Home = () => {
         <section>
           <h3 className="px-5 pb-5 text-2xl text-[#019F6C] lg:px-10 lg:text-4xl">ACCIÓN SOCIAL</h3>
           <article className="px-5 pb-9 lg:flex lg:items-center lg:gap-5 lg:px-10">
-            <img src={mercadillo2} className="pb-3 lg:w-1/2" alt="imagen acción social" />
+            <img
+              src={mercadillo2}
+              className="rounded-2xl pb-3 lg:w-1/2"
+              alt="imagen acción social"
+            />
             <p className="text-pretty text-2xl">
               En Allons-y organizamos voluntariados a escala local (Madrid), nacional (Trujillo) e
               internacional (Perú). Existen voluntariados para todo tipo de perfiles y para todo
@@ -68,7 +80,11 @@ const Home = () => {
             CONFERENCIAS
           </h3>
           <article className="px-5 pb-9 lg:flex lg:flex-row-reverse lg:items-center lg:gap-5 lg:px-10">
-            <img src={formacion2} className="pb-3 lg:w-1/2" alt="imagen acción social" />
+            <img
+              src={formacion2}
+              className="rounded-2xl pb-3 lg:w-1/2"
+              alt="imagen acción social"
+            />
             <p className="text-pretty text-2xl">
               En Allonsy, creemos en el poder de la formación continua. Nuestras conferencias son
               oportunidades envolventes donde voluntarios adquieren conocimientos prácticos,
@@ -80,7 +96,7 @@ const Home = () => {
           </article>
           <h3 className="px-5 pb-5 text-2xl text-[#019F6C] lg:px-10 lg:text-4xl">AVENTURA</h3>
           <article className="px-5 pb-9 lg:flex lg:items-center lg:gap-5 lg:px-10">
-            <img src={adventure} className="pb-3 lg:w-1/2" alt="imagen acción social" />
+            <img src={adventure} className="rounded-2xl pb-3 lg:w-1/2" alt="imagen acción social" />
             <p className="text-pretty text-2xl">
               En Allonsy, la solidaridad va más allá de las acciones individuales; es una aventura
               compartida que construimos juntos. Nuestros voluntarios no solo se dedican a

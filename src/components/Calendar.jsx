@@ -1,27 +1,26 @@
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import { Calendar, dayjsLocalizer } from 'react-big-calendar';
 import dayjs from 'dayjs';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'dayjs/locale/es';
-// import {port} from '../../server/server.mjs';
 
 const MyCalendar = () => {
-  const [events, setEvents] = useState([]);
-  useEffect(() => {
-    fetch(`http://localhost:3000/events`)
-      .then((response) => response.json())
-      .then((data) => {
-        setEvents(
-          data.map((event) => ({
-            ...event,
-            start: new Date(event.start),
-            end: new Date(event.end)
-          }))
-        );
-      })
-      .catch((error) => console.error('Error:', error));
-  }, []);
+  // const [events, setEvents] = useState([]);
+  // useEffect(() => {
+  //   fetch(`${import.meta.env.VITE_API_URL}/events`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setEvents(
+  //         data.map((event) => ({
+  //           ...event,
+  //           start: new Date(event.start),
+  //           end: new Date(event.end)
+  //         }))
+  //       );
+  //     })
+  //     .catch((error) => console.error('Error:', error));
+  // }, []);
 
   dayjs.locale('es');
   const localizer = dayjsLocalizer(dayjs);
@@ -29,7 +28,7 @@ const MyCalendar = () => {
   return (
     <div className="h-[80dvh] p-5">
       <Calendar
-        events={events}
+        // events={events}
         localizer={localizer}
         messages={{
           allDay: 'Todo el día',

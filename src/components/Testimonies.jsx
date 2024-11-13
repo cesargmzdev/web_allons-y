@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Testimonies = () => {
   const [testimonies, setTestimonies] = useState([]);
 
-  useEffect(() => {
-    fetch('http://localhost:3000/testimonies')
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setTestimonies(data.reverse());
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${import.meta.env.VITE_API_URL}/testimonies`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setTestimonies(data.reverse());
+  //     });
+  // }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const testimonyText = document.getElementById('TestimonyText').value;
-    fetch('http://localhost:3000/testimonies', {
+    fetch(`${import.meta.env.VITE_API_URL}/testimonies`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -41,6 +41,7 @@ const Testimonies = () => {
       >
         <label htmlFor="TestimonyText">Escribe aqui tu testimonio anónimo</label>
         <textarea
+          disabled
           name="TestimonyText"
           form="TestimonyForm"
           id="TestimonyText"
@@ -50,6 +51,7 @@ const Testimonies = () => {
           required
         />
         <input
+          disabled
           type="submit"
           value="Enviar"
           className="w-fit cursor-pointer self-center rounded-md bg-[#b9e2b6] p-1 duration-100 hover:scale-110"

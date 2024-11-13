@@ -5,7 +5,7 @@ import Gmail from '../assets/svg/Gmail.svg';
 
 const ContactSection = () => {
   return (
-    <section className="flex h-[80dvh] flex-col gap-16 pt-20 text-center lg:gap-32">
+    <section className="flex h-[80dvh] flex-col gap-16 pt-20 text-center lg:gap-16">
       <h1 className="text-xl text-[#019F6C] lg:text-5xl">¿CÓMO NOS PUEDES CONTACTAR?</h1>
       <ul className="flex flex-col gap-20 lg:text-2xl">
         <li>Estamos localizados en Madrid, España</li>
