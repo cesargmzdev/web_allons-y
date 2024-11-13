@@ -25,7 +25,7 @@ const Home = () => {
             <img
               src={imagenGrupo}
               alt="imagenGrupo"
-              className="rounded-2xl lg:w-[28dvw] 2xl:w-[18dvw]"
+              className="rounded-2xl object-cover lg:w-[28dvw] 2xl:w-[18dvw]"
             />
             <img
               src={imagenGrupo2}
