@@ -6,7 +6,7 @@ import icon2 from '../assets/icons/icon2.png';
 import icon3 from '../assets/icons/icon3.png';
 import icon4 from '../assets/icons/icon4.png';
 import icon5 from '../assets/icons/icon5.png';
-import mercadillo2 from '../assets/Imgs/Voluntariados/Mercadillo Solidario/mercadillo2.jpg';
+import mercadillo2 from '../assets/Imgs/Voluntariados/Mercadillo solidario/mercadillo2.jpg';
 import formacion2 from '../assets/Imgs/Formación/formacion2.jpg';
 import adventure from '../assets/Imgs/Voluntariados/aventura.jpg';
 import Footer from '../components/Footer';
